@@ -486,7 +486,7 @@ textarea {
 	text-align: left;
 }
 .contact__form-input {
-	color: #333;
+	color: #b8b8b8;
 	padding: 2rem;
 	width: 100%;
 	border: 1px solid #ebebeb;
@@ -523,7 +523,7 @@ textarea {
 	font-size: 1.6rem;
 }
 .contact__form-input:-moz-placeholder {
-	opacity: 1;
+	/* opacity: 1; */
 	color: #999;
 	font-weight: 600;
 	font-size: 1.6rem;
