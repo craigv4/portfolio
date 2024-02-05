@@ -4,6 +4,7 @@ const smallMenu = document.querySelector('.header__sm-menu');
 const headerHamMenuBtn = document.querySelector('.header__main-ham-menu');
 const headerHamMenuCloseBtn = document.querySelector('.header__main-ham-menu-close');
 const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link');
+const btn = document.querySelector('.toggle');
 
 hamMenuBtn.addEventListener('click', () => {
 	if (smallMenu.classList.contains('header__sm-menu--active')) {
@@ -28,9 +29,18 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 	});
 }
 
-// ---
 const headerLogoConatiner = document.querySelector('.header__logo-container');
 
 headerLogoConatiner.addEventListener('click', () => {
 	location.href = 'index.html';
 });
+
+function toggle() {
+	if (document.documentElement.getAttribute('color-mode') == 'light') {
+		document.documentElement.setAttribute('color-mode', 'dark');
+		btn.innerHTML = 'Light';
+	} else {
+		document.documentElement.setAttribute('color-mode', 'light');
+		btn.innerHTML = ' Dark';
+	}
+}
