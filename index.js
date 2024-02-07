@@ -38,9 +38,9 @@ headerLogoConatiner.addEventListener('click', () => {
 function toggle() {
 	if (document.documentElement.getAttribute('color-mode') == 'light') {
 		document.documentElement.setAttribute('color-mode', 'dark');
-		btn.innerHTML = 'Light';
+		btn.innerHTML = 'Light Theme';
 	} else {
 		document.documentElement.setAttribute('color-mode', 'light');
-		btn.innerHTML = ' Dark';
+		btn.innerHTML = 'Dark Theme';
 	}
 }

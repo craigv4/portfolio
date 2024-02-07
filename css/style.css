@@ -14,18 +14,20 @@ Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only
 */
 
 :root[color-mode='light'] {
-	--text: #0d0c13;
-	--background: #fcfcfd;
+	--text: #222;
+	--background: #eaeaea;
 	--primary: #514bb9;
 	--secondary: #8d88dd;
 	--accent: #736be1;
+	--form-input: #00000030;
 }
 :root[color-mode='dark'] {
-	--text: #edecf3;
-	--background: #020203;
+	--text: #eaeaea;
+	--background: #222;
 	--primary: #4b46b4;
 	--secondary: #272277;
 	--accent: #261e94;
+	--form-input: #ffffff30;
 }
 
 *,
@@ -39,7 +41,7 @@ Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only
 
 html {
 	font-size: 62.5%;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth scroll;
 }
 @media only screen and (max-width: 75em) {
 	html {
@@ -70,6 +72,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+	cursor: pointer;
 }
 
 li {
@@ -81,6 +84,10 @@ button:focus,
 a:focus,
 textarea:focus {
 	outline: none;
+}
+
+hr {
+	margin: auto;
 }
 
 button {
@@ -96,16 +103,14 @@ textarea {
 	position: fixed;
 	width: 100%;
 	z-index: 1000;
-	/* background: #000; */
 	background: var(--background);
-	/* box-shadow: 0 10px 100px var(--background); */
-	backdrop-filter: blur(17px) saturate(153%);
 }
 .header__content {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem 5rem;
+	border-bottom: 1px solid var(--text);
 }
 @media only screen and (max-width: 56.25em) {
 	.header__content {
@@ -359,7 +364,7 @@ textarea {
 	font-size: 1.6rem;
 }
 .btn--theme {
-	background: var(--primary);
+	background: var(--accent);
 	color: var(--text);
 }
 .btn--theme-inv {
@@ -437,16 +442,17 @@ textarea {
 }
 .home-hero__social {
 	width: 5rem;
+	background-color: var(--secondary);
 }
 .home-hero__social-icon-link {
 	width: 100%;
 	display: block;
 	padding: 1.2rem;
-	border-bottom: 2px solid var(--text);
+	border-bottom: 2px solid var(--background);
 	transition: background 0.3s;
 }
 .home-hero__social-icon-link:hover {
-	background: rgba(255, 255, 255, 0.1);
+	background: var(--primary);
 }
 .home-hero__social-icon-link--bd-none {
 	border-bottom: 0;
@@ -477,6 +483,10 @@ textarea {
 .home-hero__cta {
 	margin-top: 5rem;
 	text-align: center;
+	a {
+		border: solid 1px var(--text);
+		border-radius: 6px;
+	}
 }
 
 .about {
@@ -591,12 +601,10 @@ textarea {
 }
 
 .contact {
-	background: linear-gradient(to right, rgba(20, 20, 20, 0.868), rgba(20, 20, 20, 0.868)), url(../../assets/svg/common-bg.svg);
-	background-size: cover;
-	background-position: center;
+	background-color: var(--background);
 }
 .contact__form-container {
-	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+	/* box-shadow: 10px 10px 20px var(--text); */
 	background: var(--background);
 	padding: 4rem;
 	margin-top: 6rem;
@@ -608,8 +616,8 @@ textarea {
 	backdrop-filter: blur(7px) saturate(80%);
 	-webkit-backdrop-filter: blur(7px) saturate(80%);
 	background-color: var(--background);
-	border-radius: 12px;
-	border: 1px solid rgba(255, 255, 255, 0.125);
+	border-radius: 18px;
+	border: 1px solid var(--text);
 }
 @media only screen and (max-width: 37.5em) {
 	.contact__form-container {
@@ -640,7 +648,7 @@ textarea {
 	border: 1px solid var(--background);
 	font-size: 1.6rem;
 	letter-spacing: 0px;
-	background: var(--background);
+	background: var(--form-input);
 	border-radius: 5px;
 	font-weight: 600;
 }
@@ -689,7 +697,6 @@ textarea {
 
 .project-cs-hero {
 	color: var(--text);
-	background: linear-gradient(to right, var(--primary), var(--primary)), url(../../assets/svg/common-bg.svg);
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -785,6 +792,13 @@ textarea {
 .project-details__links {
 	margin: 0 0;
 }
+
+.project__link-btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
 .project-details__links-btn {
 	margin-right: 2rem;
 }
@@ -850,10 +864,17 @@ textarea {
 }
 .main-footer__social-cont {
 	margin-top: 2rem;
+	background-color: var(--primary);
+	padding: 1rem;
+	border-radius: 12px;
 }
 .main-footer__icon {
 	margin-right: 1rem;
-	width: 2.5rem;
+	width: 3.5rem;
+}
+.main-footer__icon:hover {
+	translate: 2%;
+	transition: all 15ms ease-in-out;
 }
 .main-footer__icon--mr-none {
 	margin-right: 0;
