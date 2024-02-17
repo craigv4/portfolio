@@ -41,7 +41,7 @@ Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only
 
 html {
 	font-size: 62.5%;
-	scroll-behavior: smooth scroll;
+	scroll-behavior: smooth;
 }
 @media only screen and (max-width: 75em) {
 	html {
@@ -52,7 +52,12 @@ html {
 	html {
 		font-size: 56%;
 	}
+	.about__content-main {
+		margin: 0 auto;
+		text-align: center;
+	}
 }
+
 @media only screen and (min-width: 112.5em) {
 	html {
 		font-size: 65%;
@@ -195,12 +200,13 @@ textarea {
 }
 .header__main-ham-menu {
 	width: 100%;
+	background-color: var(--background);
 }
 .header__main-ham-menu-close {
 	width: 100%;
 }
 .header__sm-menu {
-	background: var(--text);
+	background: var(--background);
 	position: absolute;
 	width: 100%;
 	top: 100%;
@@ -796,7 +802,7 @@ textarea {
 .project__link-btns {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .project-details__links-btn {
