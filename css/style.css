@@ -15,14 +15,14 @@ Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only
 
 :root[color-mode='light'] {
 	--text: #222;
-	--background: #eaeaea;
+	--background: #dde2f3;
 	--primary: #514bb9;
 	--secondary: #8d88dd;
 	--accent: #736be1;
 	--form-input: #00000030;
 }
 :root[color-mode='dark'] {
-	--text: #eaeaea;
+	--text: #dde2f3;
 	--background: #222;
 	--primary: #4b46b4;
 	--secondary: #272277;

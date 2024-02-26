@@ -3,7 +3,7 @@ const smallMenu = document.querySelector('.header__sm-menu');
 const headerHamMenuBtn = document.querySelector('.header__main-ham-menu');
 const headerHamMenuCloseBtn = document.querySelector('.header__main-ham-menu-close');
 const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link');
-const btn = document.querySelector('.toggle');
+const btn = document.querySelectorAll('.toggle');
 
 hamMenuBtn.addEventListener('click', () => {
 	if (smallMenu.classList.contains('header__sm-menu--active')) {
@@ -28,18 +28,22 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 	});
 }
 
-const headerLogoConatiner = document.querySelector('.header__logo-container');
+const headerLogoContainer = document.querySelector('.header__logo-container');
 
-headerLogoConatiner.addEventListener('click', () => {
+headerLogoContainer.addEventListener('click', () => {
 	location.href = 'index.html';
 });
 
 function toggle() {
 	if (document.documentElement.getAttribute('color-mode') == 'light') {
 		document.documentElement.setAttribute('color-mode', 'dark');
-		btn.innerHTML = 'Light Theme';
+		btn.forEach((e) => {
+			e.innerHTML = 'Light Theme';
+		});
 	} else {
 		document.documentElement.setAttribute('color-mode', 'light');
-		btn.innerHTML = 'Dark Theme';
+		btn.forEach((e) => {
+			e.innerHTML = 'Dark Theme';
+		});
 	}
 }
